@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tworzenie Eventu</title>
+</head>
+<body>
+<h1>Tworzenie Eventu</h1>
+<form th:action="@{/addEvent}" th:object="${events}" method="post">
+    <label for="eventName">Nazwa:</label>
+    <input type="text" id="eventName" name="eventName" th:field="*{eventName}" required>
+    <!-- Dodaj pozostałe pola eventu -->
+
+    <button type="submit">Utwórz Event</button>
+</form>
+</body>
+</html>

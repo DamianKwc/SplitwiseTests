@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Adding User to Event</title>
+</head>
+<body>
+<h1>Adding User to Event</h1>
+<form th:action="@{/addUser}" method="post">
+    <label for="idEvent">Choose Event:</label>
+    <select id="idEvent" name="idEvent">
+        <option th:each="event : ${events}" th:value="${event.idEvent}" th:text="${event.eventName}"></option>
+    </select>
+
+    <label for="idUser">Choose User:</label>
+    <select id="idUser" name="idUser">
+        <option th:each="user : ${users}" th:value="${user.idUser}" th:text="${user.username}"></option>
+    </select>
+
+    <button type="submit">Add User</button>
+</form>
+</body>
+</html>
